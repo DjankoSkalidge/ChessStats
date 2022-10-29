@@ -1,0 +1,18 @@
+[[package]]
+name = "parsita"
+version = "1.7.1"
+description = "Parser combinator library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7.0,<4.0.0"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "c899945f8958ea6cd43533bc5de16afeaa6f9487d07c4754e097e7f499d6f9ac"
+
+[metadata.files]
+parsita = [
+    {file = "parsita-1.7.1-py3-none-any.whl", hash = "sha256:4083553f9f6d543d1e509cf8621024951867db8de6350e962ef0888726142206"},
+    {file = "parsita-1.7.1.tar.gz", hash = "sha256:0ecfed08b6c95b5403dd7e0f8ef98cfc903b8348a379d16b0841bfa466081cee"},
+]
