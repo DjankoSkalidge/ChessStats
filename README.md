@@ -5,8 +5,8 @@ Stats for a PGN file containing multiple game descriptions.
 This repository contains a tool that parses a `.pgn` file into a structured json file. 
 
 ### Usage
-```
-python src/parse_pgn.py [-h] [--output-format {csv,json,mp4}] input output
+```text
+python src/jchess/cli/parse_pgn.py [-h] [--output-format {csv,json,mp4}] input output
 
 Positional arguments:
   input       Path of pgn file
@@ -15,13 +15,14 @@ Positional arguments:
 Optional arguments:
   --output-format {csv,json}
 ```
-Alternatively, import the grammar to parse your own files
+Alternatively, import the parser to parse your own files. 
 
 ```python
-from src.pgn_grammar import file
+from src.jchess.pgn.parser import file
+from src.jchess.model import File
 
-with open(path_to_pgn_file, 'r') as f:
-    parsedoutput = file.parse(f.read()).or_die()
+with open("path_to_pgn_file", 'r') as f:
+    pgn_file = File(entries=file.parse(f.read()).or_die())
 ```
 
 ### Features & Performance

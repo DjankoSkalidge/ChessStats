@@ -1,5 +1,4 @@
 from parsita import *
-from parsita.util import constant
 
 
 def formatannotations(annotations):
@@ -12,21 +11,21 @@ def formatmoveannotations(moveannotations):
 
 def formatgame(game):
     return {
-        'moves': game[0],
+        'turns': game[0],
         'outcome': game[1]
     }
 
 
 def formatmove(move):
     return {
-        'move': move[0],
+        'notation': move[0],
         'annotations': move[1] if len(move) > 0 else {}
     }
 
 
 def formatsimplemove(move):
     return {
-        'move': move,
+        'notation': move,
         'annotations': {}
     }
 
@@ -71,7 +70,7 @@ whitemovenumber = (reg(r'[0-9]+') << '.' << whitespace) > int
 blackmovenumber = (reg(r'[0-9]+') << '...' << whitespace)
 
 simplemove = chessmove > formatsimplemove
-simpleturn = whitemovenumber & (simplemove << whitespace) & (opt(chessmove << whitespace) > handleoptional) > formatturn
+simpleturn = whitemovenumber & (simplemove << whitespace) & (opt(simplemove << whitespace) > handleoptional) > formatturn
 
 moveannotationtag = reg(r'[\u0025][\u0021-\u0021\u0023-\u005A\u005E-\u007E]+')
 moveannotationvalue = reg(r'[\u0021-\u0021\u0023-\u005A\u005E-\u007E]+')

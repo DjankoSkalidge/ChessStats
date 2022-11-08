@@ -1,13 +1,14 @@
 [tool.poetry]
-name = "chessstats"
+name = "jchess"
 version = "0.1.0"
 description = "Package that can help turn a pgn file into chess insights"
 authors = ["jaco <mijnietmailen@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 parsita = "^1.7.1"
 pandas = "^1.5.1"
+pydantic = "^1.10.2"
 
 [tool.poetry.dev-dependencies]
 
