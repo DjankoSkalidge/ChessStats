@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, List
 
 
 class Move(BaseModel):
@@ -14,7 +14,8 @@ class Turn(BaseModel):
 
 
 class Game(BaseModel):
-    turns: list[Turn]
+    turns: List[Turn]
+    result: str
 
 
 class Entry(BaseModel):
@@ -23,4 +24,4 @@ class Entry(BaseModel):
 
 
 class File(BaseModel):
-    entries: list[Entry]
+    entries: List[Entry]

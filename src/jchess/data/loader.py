@@ -2,6 +2,7 @@ import json
 
 from src.jchess.model import File
 from src.jchess.pgn.parser import file
+from src.jchess.data.data import DataInstance
 
 
 class DataLoader:
@@ -14,8 +15,10 @@ class DataLoader:
         if self.filepath.endswith('.json'):
             print(f"Parsing json file {self.filepath}")
             with open(self.filepath, 'r') as f:
-                return File(entries=json.load(f))
+                obj = json.load(f)
+                data = File(entries=obj["entries"])
         else:
-            print(f"Parsing pgn file{self.filepath}")
+            print(f"Parsing pgn file {self.filepath}")
             with open(self.filepath, 'r') as f:
-                return File(entries=file.parse(f.read()).or_die())
+                data = File(entries=file.parse(f.read()).or_die())
+        return DataInstance(data.entries)

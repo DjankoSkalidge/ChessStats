@@ -12,7 +12,7 @@ def formatmoveannotations(moveannotations):
 def formatgame(game):
     return {
         'turns': game[0],
-        'outcome': game[1]
+        'result': game[1]
     }
 
 
