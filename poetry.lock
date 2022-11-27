@@ -1189,6 +1189,14 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "stockfish"
+version = "3.28.0"
+description = "Wraps the open-source Stockfish chess engine for easy integration into python."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "terminado"
 version = "0.17.0"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -1325,7 +1333,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "344c0d87d90037634691e0583267b17f356d5c55a080406d5e18d672c9873a68"
+content-hash = "90d5538c3533b07efe7a92e2dbacf7bf7893062e6c5c43f57871ffe546a53e0c"
 
 [metadata.files]
 anyio = [
@@ -2255,6 +2263,10 @@ soupsieve = [
 stack-data = [
     {file = "stack_data-0.6.0-py3-none-any.whl", hash = "sha256:b92d206ef355a367d14316b786ab41cb99eb453a21f2cb216a4204625ff7bc07"},
     {file = "stack_data-0.6.0.tar.gz", hash = "sha256:8e515439f818efaa251036af72d89e4026e2b03993f3453c000b200fb4f2d6aa"},
+]
+stockfish = [
+    {file = "stockfish-3.28.0-py3-none-any.whl", hash = "sha256:e432e57112448fe1271dff402db3a4747bf00d1721815ce0a36cfa26582cf360"},
+    {file = "stockfish-3.28.0.tar.gz", hash = "sha256:8764127c00434aa85b7fca1c064800e7ea907bb3626ccd4b583f0e911b014070"},
 ]
 terminado = [
     {file = "terminado-0.17.0-py3-none-any.whl", hash = "sha256:bf6fe52accd06d0661d7611cc73202121ec6ee51e46d8185d489ac074ca457c2"},

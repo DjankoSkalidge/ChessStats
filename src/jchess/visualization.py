@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from typing import Optional
 
-from jchess.data.data import DataInstance
+from jchess.data import DataInstance
 import matplotlib.pyplot as plt
 import numpy as np
 

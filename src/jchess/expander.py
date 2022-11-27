@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import pickle
 
 from src.jchess.model import Entry
-from src.jchess.data.data import DataInstance
+from jchess.data import DataInstance
 from src.jchess.opening_detector import OpeningNode
 
 

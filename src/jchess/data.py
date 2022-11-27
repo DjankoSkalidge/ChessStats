@@ -1,8 +1,10 @@
 from src.jchess.model import Entry, File
-from src.jchess.enums import Color
+from src.jchess.constants import Color
 from src.jchess.pgn.parser import chessmove
 from parsita.state import ParseError
 from typing import Optional, List, Dict
+from src.jchess.pgn.parser import file
+import json
 
 
 class DataInstance:
@@ -68,3 +70,22 @@ class DataInstance:
     def save(self, name: str):
         with open(name, 'w+') as f:
             f.write(File(entries=self.games).json())
+
+
+class DataLoader:
+    def __init__(self, filepath: str):
+        self.filepath = filepath
+        if not filepath.endswith('.pgn') and not filepath.endswith('.json'):
+            print(".pgn or .json file extension expected. Will try to parse this as a PGN.")
+
+    def load(self):
+        if self.filepath.endswith('.json'):
+            print(f"Parsing json file {self.filepath}")
+            with open(self.filepath, 'r') as f:
+                obj = json.load(f)
+                data = File(entries=obj["entries"])
+        else:
+            print(f"Parsing pgn file {self.filepath}")
+            with open(self.filepath, 'r') as f:
+                data = File(entries=file.parse(f.read()).or_die())
+        return DataInstance(data.entries)

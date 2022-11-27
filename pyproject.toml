@@ -10,6 +10,7 @@ parsita = "^1.7.1"
 pandas = "^1.5.1"
 pydantic = "^1.10.2"
 matplotlib = "^3.6.2"
+stockfish = "^3.28.0"
 
 [tool.poetry.dev-dependencies]
 
